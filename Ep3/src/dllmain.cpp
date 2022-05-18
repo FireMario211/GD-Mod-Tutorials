@@ -36,7 +36,7 @@ DWORD WINAPI my_thread(void* hModule) {
         MH_EnableHook(MH_ALL_HOOKS);
     } else {
         // Comment this if this causes crashes.
-        std::cout << "MinHook failed to load! Unlolading..." << std::endl;
+        std::cout << "MinHook failed to load! Unloading..." << std::endl;
         FreeLibraryAndExitThread(reinterpret_cast<HMODULE>(hModule), 0);
     }
     return true;
