@@ -29,10 +29,6 @@ DWORD WINAPI my_thread(void* hModule) {
     ImGuiHook::setToggleCallback([]() {
         show = !show; // Toggles imgui from showing (Press K to toggle)
     });
-    if (MH_Initialize() != MH_OK) {
-        //This line will dettach your DLL when executed. Remove if needed
-        
-    }
     if (MH_Initialize() == MH_OK) {
         ImGuiHook::setupHooks([](void* target, void* hook, void** trampoline) {
             MH_CreateHook(target, hook, trampoline); // Sets up hook for imgui
